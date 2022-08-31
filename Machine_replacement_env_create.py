@@ -29,6 +29,12 @@ class Machine_Replacement:
             self.R[0,i,:] = self.cost[i];
             self.R[1,i,0] = self.rep_cost+self.cost[0];
         return self.R;
+    def gen_expected_reward(self):
+        self.R = np.zeros((self.nA,self.nS));
+        for i in range(self.nS):
+            self.R[0,i] = self.cost[i];
+            self.R[1,i] = self.rep_cost + self.cost[0];
+        return self.R;
 '''nS = 4;
 nA=2;
 cost=np.linspace(0.1, 0.99,nS);

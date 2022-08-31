@@ -30,7 +30,7 @@ class plots:
             state = self.start;
             rew_state = np.zeros(self.nS);
             n = np.zeros(self.nS);
-            #k=np.random.choice(self.K);
+            k=np.random.choice(self.K);
             for t in range(self.T):
                 action = np.argmax(np.random.multinomial(1,self.behaviour_policy[state,:]))
                 next_state = np.argmax(np.random.multinomial(1,self.P[action,state,:]));
